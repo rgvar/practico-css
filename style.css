@@ -66,17 +66,19 @@ blockquote p {
     border: 1px solid cornflowerblue;
     border-radius: 0.5rem;
     box-shadow: 0.05rem 0.05rem 0.2rem 0.05rem;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
 }
 
 .box2 {
-    background-color: greenyellow;
+    background-color: lightcoral;
     margin: 0.5rem 0rem;
     padding: 0.05rem 2rem;
     border: 2px solid black;
     border-radius: 0.6rem;
     box-shadow: 0.07rem 0.07rem 0.2rem 0.05rem;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
 }
 
 .relativo {
@@ -119,17 +121,18 @@ blockquote p {
 .grid-container {
     display: grid;
     height: auto;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1rem;
     align-items: center;
+    justify-content: center;
     
 }
 
 .grid-item {
     background-color: brown;
     height: 4rem;
-    width: 20rem;
-    margin: 1rem;
+    width: 30vw;
+    margin: 0rem;
 
     border-radius: 5px;
     text-align: center;
@@ -139,7 +142,62 @@ blockquote p {
     align-items: center;
 }
 
+.container {
+    display:grid;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
 
+.mover {
+    background-color: brown;
+    width: 10rem;
+    height: 10rem;
+    margin: 5rem 0rem;
+
+    border-radius: 1rem;
+    animation: mover 2s infinite;
+
+
+}
+@keyframes mover {
+    0% {
+        transform: translateX(-35vw) rotate(0deg);
+    }
+    50% {
+        transform: translateX(35vw) rotate(360deg);
+    }
+    100% {
+        transform: translateX(-35vw) rotate(0deg);
+    }
+}
+
+.animacion {
+    background-color: rgb(104, 0, 0);
+    width: 10rem;
+    height: 10rem;
+    margin: 5rem;
+    position: relative;
+
+    border-radius: 1rem;
+}
+
+.animacion:hover{
+    background-color: cornflowerblue;
+    transition: 0.3s ease;
+    cursor: pointer;
+    animation: sacudir 0.03s infinite;
+}
+@keyframes sacudir {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform:rotate(3deg);
+    }
+}
 
 @media (max-width: 768px) {
     body {
@@ -163,40 +221,13 @@ blockquote p {
         border-left: 0.3rem solid #7ca870;
 
     }
+    .mover {
+        width: 4rem;
+        height: 4rem;
+    }
+    .animacion {
+        width: 4rem;
+        height: 4rem;
+    }
 
   }
-
-
-
-.box-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.box {
-    width: 100px;
-    margin: 5px 0px;
-    padding: 5px 0px;
-    background-color: #80A4ED;
-    transition: 0.19s ease;
-    text-align: center;
-    
-}
-
-.box:hover{
-    cursor: pointer;
-    background-color: #5E8CE8;
-    animation: tocar 0.03s linear;
-}
-
-@keyframes tocar {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform:rotate(10deg);
-    }
-}
